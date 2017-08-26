@@ -19,7 +19,9 @@ RUN apt-get update -y \
         psiturk==${PSITURK_VERSION} \
         # Needed if the database is MySQL
         mysql-python \
-    && rm -rf /var/lib/apt
+    && apt-get clean autoclean \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 WORKDIR /psiturk
 
