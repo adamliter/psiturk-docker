@@ -8,14 +8,17 @@ ENV PSITURK_VERSION=${PSITURK_VERSION:-2.2.3} \
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y \
-        python \
+        python-dev \
         python-pip \
+        libmysqlclient-dev \
     && pip install --upgrade \
         pip \
         setuptools \
         wheel \
     && pip install --upgrade \
         psiturk==${PSITURK_VERSION} \
+        # Needed if the database is MySQL
+        mysql-python \
     && rm -rf /var/lib/apt
 
 WORKDIR /psiturk
