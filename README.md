@@ -44,6 +44,10 @@ versions that folks are unlikely to want to ever use.  None of the
 `1.x.y` versions are available because none of these support
 the [Ad Server][ad-server].
 
+It's worth noting that `us_only` and `approve_requirement` did not work
+prior to version `2.2.0` (see, *e.g.*, [here][version-warning]). Use
+older versions at your own risk.
+
 ## Usage
 
 These Docker images are intended to be the base for your own (very
@@ -188,6 +192,7 @@ For some reason, the `localhost` option has never worked for me, but
 [pypi]: https://pypi.python.org/pypi
 [gnureadline-fail]: https://stackoverflow.com/q/22892482/2571049
 [ad-server]: http://psiturk.readthedocs.io/en/latest/psiturk_org_setup.html
+[version-warning]: https://github.com/NYUCCL/psiTurk/issues/162#issuecomment-336684647
 
 <!-- Local Variables: -->
 <!-- mode: gfm -->
