@@ -32,6 +32,10 @@ are:
 - `2.2.0`
 - `2.1.7`
 - `2.1.6`
+- `2.1.4`
+
+There is not a tag for `2.1.5` because there is not a version for
+psiTurk `2.1.5` on [PyPI][pypi].
 
 ## Usage
 
@@ -174,7 +178,7 @@ For some reason, the `localhost` option has never worked for me, but
 [adamliter/psiturk]: https://hub.docker.com/r/adamliter/psiturk/
 [docker-install]: https://docs.docker.com/engine/installation/
 [tags]: #tags
-
+[pypi]: https://pypi.python.org/pypi
 
 <!-- Local Variables: -->
 <!-- mode: gfm -->
