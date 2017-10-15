@@ -7,7 +7,7 @@ According to the [documentation][what-is-psiturk], psiTurk is:
 
 > designed to help you run fully-customized and dynamic web-experiments
 > on [Amazon Mechanical Turk]. Specifically, it allows you to:
->
+nn>
 > 1. Run a web server for your experiment
 > 2. Test your experiment
 > 3. Interact with [Amazon Mechanical Turk] to recruit, post [Human
@@ -35,7 +35,14 @@ are:
 - `2.1.4`
 
 There is not a tag for `2.1.5` because there is not a version for
-psiTurk `2.1.5` on [PyPI][pypi].
+psiTurk `2.1.5` on [PyPI][pypi]. All other older versions of the `2.x.y`
+series are not available because they try to install `gnureadline`,
+which
+[requires installing `libncurses5-dev` via `apt-get`][gnureadline-fail],
+and I'd rather not increase the image size just for some older psiTurk
+versions that folks are unlikely to want to ever use.  None of the
+`1.x.y` versions are available because none of these support
+the [Ad Server][ad-server].
 
 ## Usage
 
@@ -179,6 +186,8 @@ For some reason, the `localhost` option has never worked for me, but
 [docker-install]: https://docs.docker.com/engine/installation/
 [tags]: #tags
 [pypi]: https://pypi.python.org/pypi
+[gnureadline-fail]: https://stackoverflow.com/q/22892482/2571049
+[ad-server]: http://psiturk.readthedocs.io/en/latest/psiturk_org_setup.html
 
 <!-- Local Variables: -->
 <!-- mode: gfm -->
