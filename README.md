@@ -51,7 +51,9 @@ older versions at your own risk.
 ## Usage
 
 These Docker images are intended to be the base for your own (very
-simple!) Docker images.
+simple!) Docker images. (For help using psiTurk and Docker together, as
+well as integrating a database, check out this [series of blog posts
+that I wrote][tutorial] on this very topic.)
 
 To get started, first [install Docker][docker-install].
 
@@ -193,6 +195,7 @@ For some reason, the `localhost` option has never worked for me, but
 [gnureadline-fail]: https://stackoverflow.com/q/22892482/2571049
 [ad-server]: http://psiturk.readthedocs.io/en/latest/psiturk_org_setup.html
 [version-warning]: https://github.com/NYUCCL/psiTurk/issues/162#issuecomment-336684647
+[tutorial]: https://atomicwriting.com/tutorials/psiturk-docker-linode/
 
 <!-- Local Variables: -->
 <!-- mode: gfm -->
