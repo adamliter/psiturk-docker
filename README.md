@@ -7,7 +7,7 @@ According to the [documentation][what-is-psiturk], psiTurk is:
 
 > designed to help you run fully-customized and dynamic web-experiments
 > on [Amazon Mechanical Turk]. Specifically, it allows you to:
-nn>
+>
 > 1. Run a web server for your experiment
 > 2. Test your experiment
 > 3. Interact with [Amazon Mechanical Turk] to recruit, post [Human
