@@ -12,10 +12,6 @@ RUN apt-get update -y \
         python-pip \
         libmysqlclient-dev \
     && pip install --upgrade \
-        pip \
-        setuptools \
-        wheel \
-    && pip install --upgrade \
         psiturk==${PSITURK_VERSION} \
         mysql-python \
     && apt-get clean autoclean \
