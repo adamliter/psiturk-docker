@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Adam Liter <io@adamliter.org>
 
 ARG PSITURK_VERSION
-ENV PSITURK_VERSION=${PSITURK_VERSION:-2.2.3} \
+ENV PSITURK_VERSION=${PSITURK_VERSION:-dev} \
     PSITURK_GLOBAL_CONFIG_LOCATION=/psiturk/
 
 RUN apt-get update -y \
@@ -23,6 +23,7 @@ RUN apt-get update -y \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
+
 
 WORKDIR /psiturk
 

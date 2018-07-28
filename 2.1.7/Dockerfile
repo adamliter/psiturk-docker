@@ -11,9 +11,15 @@ RUN apt-get update -y \
         python-dev \
         python-pip \
         libmysqlclient-dev \
-    && pip install --upgrade \
-        psiturk==${PSITURK_VERSION} \
-        mysql-python \
+    && test ${PSITURK_VERSION} = "dev" \
+    && apt-get install -y \
+        git \
+    && pip install \
+           git+https://github.com/NYUCCL/psiTurk.git@master \
+           PyMySQL \
+    || pip install --upgrade \
+           psiturk==${PSITURK_VERSION} \
+           mysql-python \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/

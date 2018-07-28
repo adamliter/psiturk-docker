@@ -21,10 +21,13 @@ According to the [documentation][what-is-psiturk], psiTurk is:
 
 ## Tags
 
-The images are tagged using psiTurk version numbers, as well as the
-tag `latest` for the most recent version of psiTurk. The current tags
-are:
+The images are tagged using psiTurk version numbers, as well as the tag
+`latest` for the most recent version of psiTurk available
+on [PyPI][pypi-psiturk] and `dev` for the most recent version of psiTurk
+available on the `master` branch of
+the [psiTurk repository][github-psiturk]. The current tags are:
 
+- `dev`
 - `latest`
 - `2.2.3`
 - `2.2.2`
@@ -34,9 +37,19 @@ are:
 - `2.1.6`
 - `2.1.4`
 
-There is not a tag for `2.1.5` because there is not a version for
-psiTurk `2.1.5` on [PyPI][pypi]. All other older versions of the `2.x.y`
-series are not available because they try to install `gnureadline`,
+It's likely that you'll want to use either the `latest` or `dev`
+tag. The `dev` tag is often quite a bit further along than the latest
+release on [PyPI][pypi]. In particular, at the time of writing
+(2018-07-28), if you want to use a recent version of MySQL for your
+database, you'll need to use the `dev` tag, since the `latest` tag for
+the version of psiTurk that is on PyPI uses a very outdated version of
+SQLAlchemy, which only supports MySQL versions 5.7.x and older. If you
+want to use an 8.x.y version of MySQL, you'll need to use the `dev` tag.
+
+Also note that there is not a tag for `2.1.5` because there is not a
+version for psiTurk `2.1.5` on [PyPI][pypi]. All other older versions of
+the `2.x.y` series are not available because they try to install
+`gnureadline`,
 which
 [requires installing `libncurses5-dev` via `apt-get`][gnureadline-fail],
 and I'd rather not increase the image size just for some older psiTurk
@@ -189,6 +202,8 @@ For some reason, the `localhost` option has never worked for me, but
 
 [what-is-psiturk]: http://psiturk.readthedocs.io/en/latest/forward.html#what-is-psiturk
 [adamliter/psiturk]: https://hub.docker.com/r/adamliter/psiturk/
+[pypi-psiturk]: https://pypi.org/project/PsiTurk/
+[github-psiturk]: https://github.com/NYUCCL/psiTurk/
 [docker-install]: https://docs.docker.com/engine/installation/
 [tags]: #tags
 [pypi]: https://pypi.python.org/pypi
