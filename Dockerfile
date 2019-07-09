@@ -20,6 +20,7 @@ RUN apt-get update -y \
     || pip install --upgrade \
            psiturk==${PSITURK_VERSION} \
            mysql-python \
+           certifi \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
