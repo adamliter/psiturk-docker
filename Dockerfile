@@ -11,9 +11,8 @@ RUN apt-get update -y \
         python-dev \
         python-pip \
         libmysqlclient-dev \
-    && test ${PSITURK_VERSION} = "dev" \
-    && apt-get install -y \
         git \
+    && test ${PSITURK_VERSION} = "dev" \
     && pip install \
            git+https://github.com/NYUCCL/psiTurk.git@master \
            PyMySQL \
