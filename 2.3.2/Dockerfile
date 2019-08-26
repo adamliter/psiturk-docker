@@ -6,14 +6,12 @@ ENV PSITURK_VERSION=${PSITURK_VERSION:-2.3.2} \
     PSITURK_GLOBAL_CONFIG_LOCATION=/psiturk/
 
 RUN apt-get update -y \
-    && apt-get upgrade -y \
     && apt-get install -y \
         python-dev \
         python-pip \
         libmysqlclient-dev \
-    && test ${PSITURK_VERSION} = "dev" \
-    && apt-get install -y \
         git \
+    && test ${PSITURK_VERSION} = "dev" \
     && pip install \
            git+https://github.com/NYUCCL/psiTurk.git@master \
            PyMySQL \
