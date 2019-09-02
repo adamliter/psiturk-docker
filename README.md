@@ -22,44 +22,42 @@ According to the [documentation][what-is-psiturk], psiTurk is:
 ## Tags
 
 The images are tagged using psiTurk version numbers, as well as the tag
-`latest` for the most recent version of psiTurk available
-on [PyPI][pypi-psiturk] and `dev` for the most recent version of psiTurk
-available on the `master` branch of
-the [psiTurk repository][github-psiturk]. The current tags are:
+`latest` for the most recent version of psiTurk available on
+[PyPI][pypi-psiturk] and `dev` for the most recent version of psiTurk
+available on the `master` branch of the [psiTurk
+repository][github-psiturk]. The current tags are:
 
 - `dev`
 - `latest`
-- `2.2.3`
-- `2.2.2`
-- `2.2.1`
-- `2.2.0`
-- `2.1.7`
-- `2.1.6`
-- `2.1.4`
+- `2.3.3`
+- `2.3.2`
+- `2.3.1`
+- `2.3.0`
 
-It's likely that you'll want to use either the `latest` or `dev`
-tag. The `dev` tag is often quite a bit further along than the latest
-release on [PyPI][pypi]. In particular, at the time of writing
-(2018-07-28), if you want to use a recent version of MySQL for your
-database, you'll need to use the `dev` tag, since the `latest` tag for
-the version of psiTurk that is on PyPI uses a very outdated version of
-SQLAlchemy, which only supports MySQL versions 5.7.x and older. If you
-want to use an 8.x.y version of MySQL, you'll need to use the `dev` tag.
+It's likely that you'll want to use either the `latest`, `dev`, or
+`2.3.0` tag. The `dev` tag is often quite a bit further along than the
+latest release on [PyPI][pypi].
 
-Also note that there is not a tag for `2.1.5` because there is not a
-version for psiTurk `2.1.5` on [PyPI][pypi]. All other older versions of
-the `2.x.y` series are not available because they try to install
-`gnureadline`,
-which
-[requires installing `libncurses5-dev` via `apt-get`][gnureadline-fail],
-and I'd rather not increase the image size just for some older psiTurk
-versions that folks are unlikely to want to ever use.  None of the
-`1.x.y` versions are available because none of these support
-the [Ad Server][ad-server].
+The `latest` version of psiTurk at the time of writing (2019-09-02) is
+`2.3.3`. This version of psiTurk supports Python 3. Python 3 support was
+introduced in `2.3.2`; however, both `2.3.2` (and `2.3.1`) [may be
+buggy][version-clarification].
 
-It's worth noting that `us_only` and `approve_requirement` did not work
-prior to version `2.2.0` (see, *e.g.*, [here][version-warning]). Use
-older versions at your own risk.
+Regardless, you must use a version of psiTurk >= 2.3.0. On 2019-06-01,
+Amazon dropped support for the old Amazon Mechanical Turk API. Since
+then, it is necessary to use the new API and `boto3`. The 2.3.0 version
+of psiTurk was the first version to introduce support for this new API.
+
+Both the `2.3.0` and `2.3.1` tags use Python 2. All tags starting with
+`2.3.2` and after use Python 3. According to [@deargle's
+comment][version-clarification], you should probably at least use the
+`2.3.3` tag (AKA `latest`) or the `dev` tag if you want to use psiTurk
+with Python 3.
+
+According to [the comment][version-clarification], both `2.3.1` and
+`2.3.2` may be buggy. (In my limited testing, I was able to get both
+versions to run a simple experiment, so I've nonetheless included image
+tags for both of these versions for anyone who might be interested.)
 
 ## Usage
 
@@ -207,9 +205,7 @@ For some reason, the `localhost` option has never worked for me, but
 [docker-install]: https://docs.docker.com/engine/installation/
 [tags]: #tags
 [pypi]: https://pypi.python.org/pypi
-[gnureadline-fail]: https://stackoverflow.com/q/22892482/2571049
-[ad-server]: http://psiturk.readthedocs.io/en/latest/psiturk_org_setup.html
-[version-warning]: https://github.com/NYUCCL/psiTurk/issues/162#issuecomment-336684647
+[version-clarification]: https://github.com/NYUCCL/psiTurk/issues/367#issuecomment-517977770
 [tutorial]: https://atomicwriting.com/tutorials/psiturk-docker-linode/
 
 <!-- Local Variables: -->
